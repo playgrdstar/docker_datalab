@@ -1,3 +1,3 @@
-# Sentiment scoring tweets from Twitter
+# Simple Jupyter with Docker
 
-Just a super simple script for sentiment scoring of tweets.
+How to use Docker to serve a Jupyter notebook from AWS
