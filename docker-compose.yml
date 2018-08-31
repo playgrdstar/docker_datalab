@@ -1,8 +1,33 @@
 version: '3'
 services:
   jupyterone:
-    image: jupyter/tensorflow-notebook
+    build: docker/jupyter
     ports:
       - "8888:8888"
     volumes:
       - .:/home/jovyan/work
+    env_file:
+      - config/jupyter.env
+  flaskapp:
+    build: docker/flask
+    ports:
+      - "80:80"
+    volumes: 
+      - ./docker/flask/app:/app
+      - ./data:/app/data
+    environment:
+      - FLASK_APP=main.py
+      - FLASK_DEBUG=1
+      - 'RUN=flask run --host=0.0.0.0 --port=80'
+    command: flask run --host=0.0.0.0 --port=80
+  this_mongo:
+    image: mongo
+    volumes:
+      - mongo_data:/data/db
+  this_postgres:
+    image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
+  mongo_data:

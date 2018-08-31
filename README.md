@@ -1,3 +1,3 @@
-# Simple Jupyter with Docker
+# Data Lab
 
-How to use Docker to serve a Jupyter notebook from AWS
+How I use Docker to create a data lab that can be served from AWS

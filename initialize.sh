@@ -18,9 +18,23 @@ sudo mv docker-compose /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
 # Create directories
+mkdir data
 mkdir docker
 mkdir docker/jupyter
+mkdir docker/mongo
+mkdir docker/postgres
+mkdir docker/flask
+mkdir docker/app
+mkdir docker/app/templates
+mkdir docker/app/static
+mkdir docker/app/static/css
+mkdir docker/app/static/js
+mkdir docker/app/static/data
 mkdir notebook
+mkdir lib
+mkdir models
+mkdir scrapy
+mkdir config
 
 sudo reboot
 
